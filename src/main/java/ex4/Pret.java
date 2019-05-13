@@ -2,15 +2,34 @@ package ex4;
 
 import java.util.Date;
 
+/**
+ * cette classe represente un pret bancaire
+ * 
+ * @author Kevin.s
+ *
+ */
 public class Pret {
 
+	/** strategy : Strategy */
 	private Strategy strategy;
+	/** capital : double */
 	private double capital;
+	/** capitalRestantDu : double */
 	private double capitalRestantDu;
+	/** taux : double */
 	private double taux;
+	/** dateDebut : Date */
 	private Date dateDebut;
+	/** dateFin : Date */
 	private Date dateFin;
-	
+
+	/**
+	 * Constructeur
+	 * 
+	 * @param capital
+	 * @param taux
+	 * @param dateDebut
+	 */
 	public Pret(double capital, double taux, Date dateDebut) {
 		super();
 		this.strategy = new PretATerme();
@@ -18,108 +37,147 @@ public class Pret {
 		this.taux = taux;
 		this.dateDebut = dateDebut;
 	}
-	
+
+	/**
+	 * Constructeur
+	 * 
+	 * @param capital
+	 * @param taux
+	 * @param dateDebut
+	 * @param dateFin
+	 */
 	public Pret(double capital, double taux, Date dateDebut, Date dateFin) {
-		super();
-		this.strategy = new PretATerme();
-		this.capital = capital;
-		this.taux = taux;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
-	}
-	
-	public Pret(double capital, double capitalRestantDu, double taux, Date dateDebut, Date dateFin) {
-		super();
-		this.strategy = new PretATerme();
-		this.capital = capital;
-		this.capitalRestantDu = capitalRestantDu;
-		this.taux = taux;
-		this.dateDebut = dateDebut;
+		this(capital, taux, dateDebut);
 		this.dateFin = dateFin;
 	}
 
-	/** Getter for strategy
+	/**
+	 * Constructeur
+	 * 
+	 * @param capital
+	 * @param capitalRestantDu
+	 * @param taux
+	 * @param dateDebut
+	 * @param dateFin
+	 */
+	public Pret(double capital, double capitalRestantDu, double taux, Date dateDebut, Date dateFin) {
+		this(capital, taux, dateDebut, dateFin);
+		this.capitalRestantDu = capitalRestantDu;
+
+	}
+
+	/**
+	 * Getter for strategy
+	 * 
 	 * @return the strategy
 	 */
 	public Strategy getStrategy() {
 		return strategy;
 	}
 
-	/** Setter
-	 * @param strategy the strategy to set
+	/**
+	 * Setter
+	 * 
+	 * @param strategy
+	 *            the strategy to set
 	 */
 	public void setStrategy(Strategy strategy) {
 		this.strategy = strategy;
 	}
 
-	/** Getter for capital
+	/**
+	 * Getter for capital
+	 * 
 	 * @return the capital
 	 */
 	public double getCapital() {
 		return capital;
 	}
 
-	/** Setter
-	 * @param capital the capital to set
+	/**
+	 * Setter
+	 * 
+	 * @param capital
+	 *            the capital to set
 	 */
 	public void setCapital(double capital) {
 		this.capital = capital;
 	}
 
-	/** Getter for capitalRestantDu
+	/**
+	 * Getter for capitalRestantDu
+	 * 
 	 * @return the capitalRestantDu
 	 */
 	public double getCapitalRestantDu() {
 		return capitalRestantDu;
 	}
 
-	/** Setter
-	 * @param capitalRestantDu the capitalRestantDu to set
+	/**
+	 * Setter
+	 * 
+	 * @param capitalRestantDu
+	 *            the capitalRestantDu to set
 	 */
 	public void setCapitalRestantDu(double capitalRestantDu) {
 		this.capitalRestantDu = capitalRestantDu;
 	}
 
-	/** Getter for taux
+	/**
+	 * Getter for taux
+	 * 
 	 * @return the taux
 	 */
 	public double getTaux() {
 		return taux;
 	}
 
-	/** Setter
-	 * @param taux the taux to set
+	/**
+	 * Setter
+	 * 
+	 * @param taux
+	 *            the taux to set
 	 */
 	public void setTaux(double taux) {
 		this.taux = taux;
 	}
 
-	/** Getter for dateDebut
+	/**
+	 * Getter for dateDebut
+	 * 
 	 * @return the dateDebut
 	 */
 	public Date getDateDebut() {
 		return dateDebut;
 	}
 
-	/** Setter
-	 * @param dateDebut the dateDebut to set
+	/**
+	 * Setter
+	 * 
+	 * @param dateDebut
+	 *            the dateDebut to set
 	 */
 	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
-	/** Getter for dateFin
+	/**
+	 * Getter for dateFin
+	 * 
 	 * @return the dateFin
 	 */
 	public Date getDateFin() {
 		return dateFin;
 	}
 
-	/** Setter
-	 * @param dateFin the dateFin to set
+	/**
+	 * Setter
+	 * 
+	 * @param dateFin
+	 *            the dateFin to set
 	 */
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
-	
+
 }
